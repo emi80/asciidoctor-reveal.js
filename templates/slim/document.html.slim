@@ -76,6 +76,7 @@ html lang=(attr :lang, 'en' unless attr? :nolang)
             - unless preamble.nil? or preamble.length == 0
               =preamble.pop.content
             p: small=author
+            p: small=revdate
         =content
     script src="#{revealjsdir}/lib/js/head.min.js"
     script src="#{revealjsdir}/js/reveal.js"
@@ -88,6 +89,8 @@ html lang=(attr :lang, 'en' unless attr? :nolang)
         progress: #{attr 'revealjs_progress', 'true'},
         // Display the page number of the current slide
         slideNumber: #{attr 'revealjs_slidenumber', 'false'},
+        // Skip the page number for slides
+        skipSlideNumber: #{attr 'revealjs_skipslidenumber', 'false'},
         // Push each slide change to the browser history
         history: #{attr 'revealjs_history', 'false'},
         // Enable keyboard shortcuts for navigation
